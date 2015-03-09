@@ -1,5 +1,5 @@
 {
-    "name": "fastfeed/fastfeed",
+    "name": "thesnews/fastfeed",
     "description": "A simple to use Feed Client Library.",
     "keywords": ["rss", "rss20", "feed", "feed parser", "atom", "atom10"],
     "type": "library",
