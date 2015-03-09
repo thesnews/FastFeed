@@ -129,4 +129,28 @@ abstract class AbstractDomParser
 
         return $values;
     }
+
+    /**
+     * @param DOMElement $node
+     * @param            $namespace
+     * @param            $tagName
+     * @param            $propertyName
+     *
+     * @return array
+     * @throws \FastFeed\Exception\RuntimeException
+     */
+    protected function getNodePropertyByTagNameNS(DOMElement $node, $namespace, $tagName, $propertyName)
+    {
+        $values = array();
+        $results = $node->getElementsByTagNameNS($namespace, $tagName);
+        for ($i = 0; $i < $results->length; $i++) {
+            $result = $results->item($i);
+            if ($result->getAttribute($propertyName)) {
+                $values[] = $result->getAttribute($propertyName);
+            }
+        }
+
+        return $values;
+    }
+
 }
