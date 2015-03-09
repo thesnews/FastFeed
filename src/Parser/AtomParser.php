@@ -36,7 +36,7 @@ class AtomParser extends AbstractParser implements ParserInterface
      */
     public function getNodes($content)
     {
-        $items = [];
+        $items = array();
         $document = $this->createDocumentFromXML($content);
         $nodes = $document->getElementsByTagName('entry');
         if ($nodes->length) {
@@ -80,12 +80,12 @@ class AtomParser extends AbstractParser implements ParserInterface
      */
     protected function getPropertiesMapping()
     {
-        return [
+        return array(
             'setId' => 'id',
             'setName' => 'title',
             'setIntro' => 'summary',
             'setContent' => 'content',
-        ];
+        );
     }
 
     /**
